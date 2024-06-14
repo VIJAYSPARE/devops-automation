@@ -15,7 +15,7 @@ spec:
       containers:
         - name: spring-boot-k8s
           image: vijaypare/devops-integration # Image that will be used to containers in the cluster
-          imagePullPolicy: IfNotPresent
+          #imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
 
@@ -33,4 +33,5 @@ spec:
     - protocol: "TCP"
       port: 8080 # The port that the service is running on in the cluster
       targetPort: 8080 # The port exposed by the service
-  type: NodePort # type of the service.
+  type: LoadBalancer # type of the service.
+  
